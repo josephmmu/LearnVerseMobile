@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var userIdentity: TextView
+    private lateinit var imgButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +67,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             navigationView.setCheckedItem(R.id.nav_home)
 
         }
+
+
+
+        val homeFragment = supportFragmentManager.findFragmentById(R.id.card_language) as HomeFragment
+
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
