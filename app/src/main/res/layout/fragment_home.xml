@@ -11,399 +11,230 @@
     <RelativeLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- PE -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/peFile"
             android:clickable="true"
+            android:focusable="true"
             app:strokeWidth="0dp"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="10dp">
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="15dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/pebg"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/pepic"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A1101"
-                android:layout_marginLeft="3mm"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/pecard"
+                android:layout_width="364dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/pe"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay = "@style/roundedImageView"
+                android:tintMode="src_atop"
+                app:tint="@color/Overlay"
+                app:strokeWidth="10sp"
+                app:strokeColor="@color/Pe"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PE"
+                android:text="PE - A1101"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white" />
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Contemporary World -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/contemporaryWorldFile"
             android:clickable="true"
+            android:focusable="true"
             app:strokeWidth="0dp"
-            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
             android:layout_marginTop="10dp"
             android:layout_below="@id/peFile">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/contemporaryworldbg"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/contemporaryworldpic"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A1101"
-                android:layout_marginLeft="3mm"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/contemporarycard"
+                android:layout_width="364dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/contemporaryworld"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay = "@style/roundedImageView"
+                android:tintMode="src_atop"
+                app:tint="@color/Overlay"
+                app:strokeWidth="10sp"
+                app:strokeColor="@color/ContemporaryWorld"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The Contemporary World"
+                android:text="The Contemporary World - A1101"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Language -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/languageandCommsFile"
-            android:clickable="true"
+            android:clickable = "true"
+            android:focusable="true"
             app:strokeWidth="0dp"
-            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
             android:layout_marginTop="10dp"
             android:layout_below="@id/contemporaryWorldFile">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/card_language"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/languageandcommunicationbg"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/languageandcommunicationpic"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"/>
+                android:layout_width="364dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/languangeandc"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay = "@style/roundedImageView"
+                android:tintMode="src_atop"
+                app:tint="@color/Overlay"
+                app:strokeWidth="10sp"
+                app:strokeColor="@color/Language"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="A1101"
-                android:layout_marginLeft="3mm"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="Language and Communication"
+                android:text="Language and Communication - A1101"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Math -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/mathFile"
             android:clickable="true"
+            android:focusable="true"
             app:strokeWidth="0dp"
-            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
             android:layout_marginTop="10dp"
             android:layout_below="@id/languageandCommsFile">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/mathbg"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/mathpic"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A1101"
-                android:layout_marginLeft="3mm"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/mathcard"
+                android:layout_width="364dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/math"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay = "@style/roundedImageView"
+                android:tintMode="src_atop"
+                app:tint="@color/Overlay"
+                app:strokeWidth="10sp"
+                app:strokeColor="@color/math"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="College Logic and Math"
+                android:text="College Logic and Math - A1101"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Philippine Pop -->
         <com.google.android.material.card.MaterialCardView
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/philPopFile"
             android:clickable="true"
+            android:focusable="true"
             app:strokeWidth="0dp"
-            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
             android:layout_marginTop="10dp"
             android:layout_below="@id/mathFile">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/philippinepopbg"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/philippinepoppic"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A1101"
-                android:layout_marginLeft="3mm"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/popcard"
+                android:layout_width="364dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ppop"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay = "@style/roundedImageView"
+                android:tintMode="src_atop"
+                app:tint="@color/Overlay"
+                app:strokeWidth="10sp"
+                app:strokeColor="@color/pop"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Philippine Pop Culture"
+                android:text="Philippine Pop Culture - A1101"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- Understanding the Self-->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/understandingselfFile"
             android:clickable="true"
+            android:focusable="true"
             app:strokeWidth="0dp"
-            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp"
             android:layout_marginTop="10dp"
             android:layout_below="@id/philPopFile">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/understandingtheselfbg"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/understandingselfpic"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A1101"
-                android:layout_marginLeft="3mm"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/udnerstandingcard"
+                android:layout_width="364dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/utself"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay = "@style/roundedImageView"
+                android:tintMode="src_atop"
+                app:tint="@color/Overlay"
+                app:strokeWidth="10sp"
+                app:strokeColor="@color/self"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Philippine Pop Culture"
+                android:text="Understanding the Self - A1101"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
         </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/understandingselfFile2"
-            android:clickable="true"
-            app:strokeWidth="0dp"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/understandingselfFile">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/understandingtheselfbg"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/understandingselfpic"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A1101"
-                android:layout_marginLeft="3mm"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Philippine Pop Culture"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/understandingselfFile3"
-            android:clickable="true"
-            app:strokeWidth="0dp"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/understandingselfFile2">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/understandingtheselfbg"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/understandingselfpic"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A1101"
-                android:layout_marginLeft="3mm"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Philippine Pop Culture"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/understandingselfFile4"
-            android:clickable="true"
-            app:strokeWidth="0dp"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="10dp"
-            android:layout_below="@id/understandingselfFile3">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/understandingtheselfbg"
-                android:layout_gravity="center"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/understandingselfpic"
-                android:layout_gravity="right"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="25dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A1101"
-                android:layout_marginLeft="3mm"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Philippine Pop Culture"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"/>
-        </com.google.android.material.card.MaterialCardView>
-
-
-
-
 
     </RelativeLayout>
 

@@ -24,7 +24,7 @@
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/baseline_info_24"
-            android:title="About us"/>
+            android:title="Account"/>
     </group>
 
     <item
@@ -32,20 +32,43 @@
 
         <menu>
 
+            <group
+                android:checkableBehavior="single">
             <item
-                android:id="@+id/sub"
+                android:id="@+id/subPE"
+                android:icon="@drawable/baseline_book_24"
+                android:title="PE"/>
+
+            <item
+                android:id="@+id/subContemporary"
+                android:icon="@drawable/baseline_book_24"
+                android:title="The Contemporary World"/>
+
+            <item
+                android:id="@+id/subLanguage"
+                android:icon="@drawable/baseline_book_24"
+                android:title="Language and Communication"/>
+
+            <item
+                android:id="@+id/subMath"
                 android:icon="@drawable/baseline_book_24"
                 android:title="College Logic and Math"/>
 
             <item
-                android:id="@+id/sub2"
+                android:id="@+id/subPop"
                 android:icon="@drawable/baseline_book_24"
-                android:title="Contemporary World"/>
+                android:title="Philippine Pop Culture"/>
+
+            <item
+                android:id="@+id/subSelf"
+                android:icon="@drawable/baseline_book_24"
+                android:title="Understanding the Self"/>
 
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/baseline_logout_24"
-                android:title="Logout " />
+                android:title="Logout "/>
+            </group>
         </menu>
 
     </item>

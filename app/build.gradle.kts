@@ -60,9 +60,20 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.animation.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.foundation)
+    implementation(libs.androidx.material)
+    implementation(platform("androidx.compose:compose-bom:2023.06.01"))
+    implementation("com.google.accompanist:accompanist-themeadapter-material3:0.28.0")
+
+    implementation(libs.androidx.activity.ktx)
 
     implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
+    implementation (libs.androidx.activity.compose)
+    debugImplementation(libs.androidx.ui.tooling)
+
+
 }

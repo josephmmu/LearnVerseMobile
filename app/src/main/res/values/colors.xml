@@ -4,4 +4,13 @@
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#F0AB60</color>
     <color name="Lavender">#8692f7</color>
+    <color name="Overlay">#3F040404</color>
+    <color name="Pe">#DAE7ED</color>
+    <color name="ContemporaryWorld">#1D4E6E</color>
+    <color name="Language">#939999</color>
+    <color name="math">#4E4E4E</color>
+    <color name="pop">#0D1EB2</color>
+    <color name="self">#877B6F</color>
+
+
 </resources>

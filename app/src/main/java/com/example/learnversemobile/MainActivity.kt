@@ -13,30 +13,15 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-
     private lateinit var drawerLayout: DrawerLayout
-    private lateinit var userIdentity: TextView
-    private lateinit var imgButton: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
-
-
-
-//        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawer_layout)) { v, insets ->
-//            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-//            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-//            insets
-//        }
-
-        //val intent = Intent(this, Home::class.java)
-
-
 
         drawerLayout = findViewById(R.id.drawer_layout)
 
@@ -65,14 +50,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container,HomeFragment()).commit()
             navigationView.setCheckedItem(R.id.nav_home)
-
         }
-
-
-
-        val homeFragment = supportFragmentManager.findFragmentById(R.id.card_language) as HomeFragment
-
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -85,6 +63,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.fragment_container, ShareFragment()).commit()
             R.id.nav_about -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AboutFragment()).commit()
+
+            R.id.subPE -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subContemporary -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subMath -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subPop -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subSelf -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+
             R.id.nav_logout -> Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
@@ -101,5 +91,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
            onBackPressedDispatcher.onBackPressed()
        }
     }
-
 }

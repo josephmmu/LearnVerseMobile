@@ -17,11 +17,16 @@
         <item name="colorOnSecondary">@color/orange</item>
 
         <!-- Status Bar Color -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/orange</item>
 
     </style>
 
-    <style name="Theme.LearnVerseMobile" parent="Base.Theme.LearnVerseMobile" />
+    <style name="Theme.LearnVerseMobile" parent="Base.Theme.LearnVerseMobile"/>
+
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20%</item>
+    </style>
 
 
 
