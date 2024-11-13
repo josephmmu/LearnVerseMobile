@@ -46,7 +46,6 @@ private const val ARG_PARAM2 = "param2"
  * Use the [SubjectFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-
 class SubjectFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -62,12 +61,14 @@ class SubjectFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+
         val view = inflater.inflate(R.layout.fragment_subject, container, false)
         val composeView = view.findViewById<ComposeView>(R.id.compose_view)
 
         composeView.setContent {
             myScreen()
         }
+
         return view
     }
 
@@ -175,7 +176,7 @@ class SubjectFragment : Fragment() {
                     isExpanded = isExpanded1
                 ) {
                     // Nested Headings for Main Heading 1
-                    var isNestedExpanded1 = remember { mutableStateOf(false) }
+                    val isNestedExpanded1 = remember { mutableStateOf(false) }
                     ExpandableHeading(
                         title = "Discussion",
                         isExpanded = isNestedExpanded1
@@ -201,7 +202,7 @@ class SubjectFragment : Fragment() {
                         }
                     }
 
-                    var isNestedExpanded2 = remember { mutableStateOf(false) }
+                    val isNestedExpanded2 = remember { mutableStateOf(false) }
                     ExpandableHeading(
                         title = "Output",
                         isExpanded = isNestedExpanded2
@@ -236,7 +237,7 @@ class SubjectFragment : Fragment() {
                     isExpanded = isExpanded1
                 ) {
                     // Nested Headings for Main Heading 1
-                    var isNestedExpanded1 = remember { mutableStateOf(false) }
+                    val isNestedExpanded1 = remember { mutableStateOf(false) }
                     ExpandableHeading(
                         title = "Discussion",
                         isExpanded = isNestedExpanded1
@@ -262,7 +263,7 @@ class SubjectFragment : Fragment() {
                         }
                     }
 
-                    var isNestedExpanded2 = remember { mutableStateOf(false) }
+                    val isNestedExpanded2 = remember { mutableStateOf(false) }
                     ExpandableHeading(
                         title = "Output",
                         isExpanded = isNestedExpanded2
@@ -297,7 +298,7 @@ class SubjectFragment : Fragment() {
                     isExpanded = isExpanded1
                 ) {
                     // Nested Headings for Main Heading 1
-                    var isNestedExpanded1 = remember { mutableStateOf(false) }
+                    val isNestedExpanded1 = remember { mutableStateOf(false) }
                     ExpandableHeading(
                         title = "Discussion",
                         isExpanded = isNestedExpanded1
@@ -323,7 +324,7 @@ class SubjectFragment : Fragment() {
                         }
                     }
 
-                    var isNestedExpanded2 = remember { mutableStateOf(false) }
+                    val isNestedExpanded2 = remember { mutableStateOf(false) }
                     ExpandableHeading(
                         title = "Output",
                         isExpanded = isNestedExpanded2
@@ -337,6 +338,7 @@ class SubjectFragment : Fragment() {
                             Row (
                                 modifier = Modifier
                                     .fillMaxWidth(),
+
                             ) {
                                 Image(
                                     painter = painterResource(id = R.drawable.baseline_book_24),

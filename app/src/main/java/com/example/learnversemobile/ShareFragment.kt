@@ -5,6 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.material.Text
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,18 +36,51 @@ class ShareFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+
     }
 
+    @OptIn(ExperimentalLayoutApi::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_share, container, false)
+        val view = inflater.inflate(R.layout.fragment_share, container, false)
+        val composeView = view.findViewById<ComposeView>(R.id.compose_view3)
+
+        composeView.setContent {
+            FlowRow(modifier = Modifier.padding(20.dp,15.dp)
+                .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalArrangement = Arrangement.spacedBy(30.dp),
+                maxItemsInEachRow = 3,) {
+                Image(
+                    painter = painterResource(id = R.drawable.baseline_storage_24),
+                    contentDescription = null,
+                    modifier = Modifier.size(50.dp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.baseline_image_24),
+                    contentDescription = null,
+                    modifier = Modifier.size(50.dp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.baseline_videocam_24),
+                    contentDescription = null,
+                    modifier = Modifier.size(50.dp)
+                )
+
+                Text(text = "Drive")
+
+                Text(text = "Images")
+
+                Text(text = "Video")
+            }
+        }
+        return view
     }
 
     companion object {

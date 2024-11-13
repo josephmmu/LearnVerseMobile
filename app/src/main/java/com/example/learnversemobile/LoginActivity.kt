@@ -34,12 +34,23 @@ class LoginActivity : AppCompatActivity() {
 
         val startMainMenu = Intent(this,  MainActivity::class.java)
 
+        val fullName = usernameText.toString() + passwordText.toString()
+
         loginButton.setOnClickListener{
-            if (usernameText.toString() == "admin" && passwordText.toString() == "admin") {
-                startMainMenu.putExtra("MESSAGE_KE", usernameText.toString())
+            if (usernameText.toString() == "Joseph" && passwordText.toString() == "Sales")  {
+                startMainMenu.putExtra("MESSAGE_KE", usernameText.toString() + " " + passwordText.toString())
+                startActivity(startMainMenu)
+            } else if (usernameText.toString() == "Mark" && passwordText.toString() == "Gabriel") {
+                startMainMenu.putExtra("MESSAGE_KE", usernameText.toString() + " " + passwordText.toString())
                 startActivity(startMainMenu)
             }
+            val bundle = Bundle()
+            bundle.putString("fNameKey",usernameText.toString() + " " + passwordText.toString() )
+
+            AboutFragment.arguments = bundle
         }
+
+
 
 
 

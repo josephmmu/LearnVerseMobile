@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.learnversemobile.databinding.FragmentHomeBinding
+import com.google.android.material.navigation.NavigationView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,52 +21,62 @@ private const val ARG_PARAM2 = "param2"
  * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-
 class HomeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
 
-    private lateinit var imageBtn : ImageView
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_home, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        val binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-        imageBtn = binding.cardLanguage
-
-        imageBtn.setOnClickListener{
-
-            val intent = Intent(requireContext(), MainActivity2:: class.java)
-            startActivity(intent)
-
-        }
+        // Call the function to set up click listeners for multiple ImageViews
+        setupClickListeners(
+            binding.cardLanguage,
+            binding.pecard, // Replace with your actual ImageView IDs
+            binding.contemporarycard,  // Add as many as you need
+            binding.mathcard,
+            binding.popcard,
+            binding.udnerstandingcard,
+        )
         return binding.root
     }
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
+    private fun setupClickListeners(vararg imageViews: ImageView) {
+        val context = requireContext()
+
+        for (imageView in imageViews) {
+            imageView.setOnClickListener {
+                val intent = Intent(context, MainActivity2::class.java)
+                startActivity(intent)
+
+                val navigationView = activity?.findViewById<NavigationView>(R.id.nav_view)
+
+                when (imageView) {
+                    binding.cardLanguage -> {
+                        navigationView?.setCheckedItem(R.id.subLanguage)
+                    }
+                    binding.pecard -> {
+                        navigationView?.setCheckedItem(R.id.subPE) // Example: select "Home"
+                    }
+                    binding.contemporarycard -> {
+                        navigationView?.setCheckedItem(R.id.subContemporary) // Example: select "Settings"
+                    }
+                    binding.mathcard -> {
+                        navigationView?.setCheckedItem(R.id.subMath) // Example: select "Settings"
+                    }
+                    binding.popcard -> {
+                        navigationView?.setCheckedItem(R.id.subPop) // Example: select "Settings"
+                    }
+                    binding.udnerstandingcard -> {
+                        navigationView?.setCheckedItem(R.id.subSelf) // Example: select "Settings"
+                    }
+
+
+                    // Add more cases as needed
                 }
             }
+        }
     }
 }
