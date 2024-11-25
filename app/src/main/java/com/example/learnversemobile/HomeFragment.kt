@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.findNavController
 import com.example.learnversemobile.databinding.FragmentHomeBinding
 import com.google.android.material.navigation.NavigationView
 
@@ -43,6 +44,8 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+
+
     private fun setupClickListeners(vararg imageViews: ImageView) {
         val context = requireContext()
 
@@ -72,8 +75,6 @@ class HomeFragment : Fragment() {
                     binding.udnerstandingcard -> {
                         navigationView?.setCheckedItem(R.id.subSelf) // Example: select "Settings"
                     }
-
-
                     // Add more cases as needed
                 }
             }

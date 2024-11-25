@@ -47,17 +47,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class SubjectFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -72,31 +61,11 @@ class SubjectFragment : Fragment() {
         return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SubjectFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic fun newInstance(param1: String, param2: String) =
-                SubjectFragment().apply {
-                    arguments = Bundle().apply {
-                        putString(ARG_PARAM1, param1)
-                        putString(ARG_PARAM2, param2)
-                    }
-                }
-    }
-
     @Preview(showBackground = true)
     @Composable
     fun ShowMe() {
         myScreen()
     }
-
 
     @Composable
     fun myScreen():View {
@@ -109,6 +78,7 @@ class SubjectFragment : Fragment() {
         var showing1  by remember { mutableStateOf(false) }
         val discussion1 = remember { mutableStateOf(
             AlertDialogue(
+                showButton = false,
                 alertType = R.drawable.baseline_insert_drive_file_24,
                 alertTitle = "Discussion",
                 alertContent = "1. Using this guide, you should be able to answer the following questions:\n" +
@@ -121,6 +91,7 @@ class SubjectFragment : Fragment() {
         var showing2  by remember { mutableStateOf(false) }
         val submit1 = remember { mutableStateOf(
             AlertDialogue(
+                showButton = true,
                 alertType = R.drawable.baseline_book_24,
                 alertTitle = "Output",
                 alertContent = "Please submit your Worksheet #1 here"
@@ -129,6 +100,7 @@ class SubjectFragment : Fragment() {
         var showing3  by remember { mutableStateOf(false) }
         val discussion2 = remember { mutableStateOf(
             AlertDialogue(
+                showButton = false,
                 alertType = R.drawable.baseline_insert_drive_file_24,
                 alertTitle = "Discussion",
                 alertContent = "1. Using this guide, you should be able to answer the following questions:\n" +
@@ -141,6 +113,7 @@ class SubjectFragment : Fragment() {
         var showing4  by remember { mutableStateOf(false) }
         val submit2 = remember { mutableStateOf(
             AlertDialogue(
+                showButton = true,
                 alertType = R.drawable.baseline_book_24,
                 alertTitle = "Discussion",
                 alertContent = "Please submit your Worksheet #2 here"
@@ -149,6 +122,7 @@ class SubjectFragment : Fragment() {
         var showing5  by remember { mutableStateOf(false) }
         val discussion3 = remember { mutableStateOf(
             AlertDialogue(
+                showButton = false,
                 alertType = R.drawable.baseline_insert_drive_file_24,
                 alertTitle = "Discussion",
                 alertContent = "1. Using this guide, you should be able to answer the following questions:\n" +
@@ -161,12 +135,11 @@ class SubjectFragment : Fragment() {
         var showing6 by remember { mutableStateOf(false) }
         val submit3 = remember { mutableStateOf(
             AlertDialogue(
+                showButton = true,
                 alertType = R.drawable.baseline_book_24,
                 alertTitle = "Output",
                 alertContent = "Please submit your Worksheet #2 here"
             ))}
-
-
 
         LazyColumn {
             item {
@@ -355,16 +328,14 @@ class SubjectFragment : Fragment() {
             }
         }
 
-        if (showing1) { AlertDialogue(discussion1, onDismiss = {showing1 = false}) }
-        if (showing2) { AlertDialogue(submit1, onDismiss = {showing2 = false})}
+        if (showing1) { AlertDialogue(false, discussion1, onDismiss = {showing1 = false}) }
+        if (showing2) { AlertDialogue(true, submit1, onDismiss = {showing2 = false})}
 
-        if (showing3) { AlertDialogue(discussion2, onDismiss = {showing3 = false}) }
-        if (showing4) { AlertDialogue(submit2, onDismiss = {showing4 = false}) }
+        if (showing3) { AlertDialogue(false, discussion2, onDismiss = {showing3 = false}) }
+        if (showing4) { AlertDialogue(true,  submit2, onDismiss = {showing4 = false}) }
 
-        if (showing5) { AlertDialogue(discussion3, onDismiss = {showing5 = false}) }
-        if (showing6) { AlertDialogue(submit3, onDismiss = {showing6 = false}) }
-
-
+        if (showing5) { AlertDialogue(false, discussion3, onDismiss = {showing5 = false}) }
+        if (showing6) { AlertDialogue( true, submit3, onDismiss = {showing6 = false}) }
 
         return layout
     }

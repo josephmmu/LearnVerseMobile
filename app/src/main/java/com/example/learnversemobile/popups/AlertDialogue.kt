@@ -3,6 +3,9 @@ package com.example.learnversemobile.popups
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.FlowRow
+import androidx.compose.foundation.layout.FlowColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -10,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.AlertDialog
+import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -25,11 +29,13 @@ import com.example.learnversemobile.R
 class AlertDialogue (
     val alertType: Int,
     val alertTitle: String,
-    val alertContent: String
+    val alertContent: String,
+    val showButton: Boolean
 )
 
 @Composable
 fun AlertDialogue(
+    showButton: Boolean,
     alert: MutableState<AlertDialogue>,
     onDismiss:()-> Unit
 ) {
@@ -39,9 +45,9 @@ fun AlertDialogue(
         modifier = Modifier
             .height(800.dp)
             .width(500.dp),
-
         title = {
             Row (
+                modifier = Modifier.padding(24.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
@@ -61,13 +67,26 @@ fun AlertDialogue(
         text = {
              Column (
                  modifier = Modifier
-                     .fillMaxSize(),
+                     .fillMaxSize()
+                     .padding(16.dp),
                  horizontalAlignment = Alignment.CenterHorizontally,
                  verticalArrangement = Arrangement.Center
              ){
                  Text(alert.value.alertContent)
+
+                 Spacer(modifier = Modifier.weight(1f, false))
+
+                 if (showButton) {
+                     Button(
+                         onClick = {},
+                         modifier = Modifier
+                             .padding(10.dp)
+
+                     ) {
+                         Text(text = "Upload File")
+                     }
+                 }
              }
         }
     )
-
 }

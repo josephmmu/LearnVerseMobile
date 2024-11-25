@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -68,12 +69,20 @@ dependencies {
     implementation(libs.androidx.material)
     implementation(platform("androidx.compose:compose-bom:2023.06.01"))
     implementation("com.google.accompanist:accompanist-themeadapter-material3:0.28.0")
+    implementation("androidx.compose.foundation:foundation:1.7.5")
 
     implementation(libs.androidx.activity.ktx)
 
     implementation ("androidx.constraintlayout:constraintlayout-compose:1.0.1")
     implementation (libs.androidx.activity.compose)
+    implementation ("androidx.compose.ui:ui-tooling:1.6.0")
+    implementation ("androidx.compose.material:material:1.6.0")
+    implementation ("androidx.compose.ui:ui:1.6.0")
+    implementation ("androidx.compose.foundation:foundation:1.6.0")
+
     debugImplementation(libs.androidx.ui.tooling)
 
 
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.3")
 }

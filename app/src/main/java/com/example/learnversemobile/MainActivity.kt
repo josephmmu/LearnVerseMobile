@@ -1,10 +1,8 @@
 package com.example.learnversemobile
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -13,14 +11,17 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
 
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -53,20 +54,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        navController = findNavController(R.id.nav_host_fragment_container)
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.nav_home -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, HomeFragment()).commit()
             R.id.nav_settings -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SettingFragment()).commit()
+                .replace(R.id.fragment_container, transcriptFragment()).commit()
             R.id.nav_share -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, ShareFragment()).commit()
+                .replace(R.id.fragment_container, documentFragment()).commit()
             R.id.nav_about -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AboutFragment()).commit()
 
             R.id.subPE -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, SubjectFragment()).commit()
             R.id.subContemporary -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subLanguage -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, SubjectFragment()).commit()
             R.id.subMath -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, SubjectFragment()).commit()
@@ -91,4 +99,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
            onBackPressedDispatcher.onBackPressed()
        }
     }
+
+
 }

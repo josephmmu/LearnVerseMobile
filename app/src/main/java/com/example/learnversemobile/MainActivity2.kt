@@ -2,38 +2,10 @@ package com.example.learnversemobile
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.rotate
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.unit.dp
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.recyclerview.widget.RecyclerView
-import com.example.learnversemobile.databinding.ActivityMainBinding
-import org.w3c.dom.Text
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -87,15 +59,25 @@ class MainActivity2 : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         when (item.itemId) {
             R.id.nav_home -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, HomeFragment()).commit()
-
             R.id.nav_settings -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SettingFragment()).commit()
-
+                .replace(R.id.fragment_container, transcriptFragment()).commit()
             R.id.nav_share -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, ShareFragment()).commit()
-
+                .replace(R.id.fragment_container, documentFragment()).commit()
             R.id.nav_about -> supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, AboutFragment()).commit()
+
+            R.id.subPE -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subContemporary -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subLanguage -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subMath -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subPop -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
+            R.id.subSelf -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SubjectFragment()).commit()
 
             R.id.nav_logout -> Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
         }
